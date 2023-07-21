@@ -1,0 +1,636 @@
+html {
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-color: yellowgreen;
+  overflow: hidden;
+}
+
+.navbar {
+  width: 100%;
+  height: 10%;
+  position: relative;
+  border: 0.1rem solid white;
+  border-radius: 0.75rem;
+  background-color: greenyellow;
+}
+
+#keepIcon {
+  font-size: 2.5rem;
+}
+
+#logo {
+  position: absolute;
+  display: flex;
+  left: 5%;
+  top: 50%;
+  transform: translateX(-5%) translateY(-50%);
+}
+
+#logo span {
+  font-size: 1.5rem;
+  align-self: center;
+  color: white;
+  cursor: default;
+}
+
+#menuSection {
+  position: absolute;
+  color: white;
+  right: 5%;
+  top: 50%;
+  transform: translateX(5%) translateY(-50%);
+}
+
+#menuIcon {
+  color: white;
+  font-size: 2.5rem;
+}
+
+#dropDown {
+  height: 100%;
+  width: 5%;
+  position: absolute;
+  top: 100%;
+  right: 5%;
+  transform: translateX(-5%);
+  background-color: rgba(0, 0, 0, 0.9);
+  animation: dropdown 1s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: opacity 1s;
+}
+
+#dropDown a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+#dropDown a:hover {
+  color: yellowgreen;
+}
+
+@keyframes dropdown {
+  from {
+    top: -200%;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+.activeNav {
+  color: white !important;
+}
+
+.mainBlock {
+  width: 100%;
+  height: 90%;
+  display: grid;
+  place-items: center;
+}
+
+.loginBox {
+  border: 0.1rem solid white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginBox input {
+  border: none;
+  outline: none;
+  padding: 0.2rem;
+  font-size: 1.5rem;
+  width: 15rem;
+  margin-bottom: 0.2rem;
+  text-align: center;
+}
+
+.loginBox input::placeholder {
+  font-size: 0.8rem;
+}
+
+.loginBox legend {
+  color: white;
+  padding: 0.2rem;
+  font-size: 1.5rem;
+}
+
+.loginBox span {
+  font-size: 1rem;
+  color: red;
+  padding-bottom: 1rem;
+}
+
+@keyframes errorShake {
+  0% {
+    transform: none;
+  }
+  10% {
+    transform: translateX(-5%);
+  }
+  20% {
+    transform: translateX(5%);
+  }
+  30% {
+    transform: translateX(-5%);
+  }
+  40% {
+    transform: translateX(5%);
+  }
+  50% {
+    transform: translateX(-5%);
+  }
+  60% {
+    transform: translateX(5%);
+  }
+  70% {
+    transform: translateX(-5%);
+  }
+  80% {
+    transform: translateX(5%);
+  }
+  90% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.btn {
+  transform: scale(1.2);
+  background: transparent;
+  border: 0.1rem solid white;
+  padding: 0.5rem;
+  color: white;
+  outline: none;
+  transition: all 0.5s;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: scale(1.19);
+  border: 0.1rem solid yellowgreen;
+  color: yellowgreen;
+  background-color: white;
+}
+
+.table {
+  width: 50%;
+  height: fit-content;
+  max-height: 75vh;
+  overflow-y: auto;
+  border: 0.1rem solid white;
+  border-top: none;
+}
+
+.table-row {
+  display: flex;
+  border-bottom: 0.1rem solid white;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row div {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  border-right: 0.1rem solid white;
+}
+
+.table-row div:last-child {
+  border-right: none;
+}
+
+.btnAction {
+  font-size: 0.8rem;
+  padding: 0.2rem;
+  color: blue;
+  border: 0.1rem solid blue;
+  background: transparent;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.chpassword:hover,
+.chpassword:focus {
+  transform: scale(1.01);
+  color: green;
+  border: 0.1rem solid green;
+}
+
+.delete:hover,
+.delete:focus {
+  transform: scale(1.01);
+  color: red;
+  border: 0.1rem solid red;
+}
+
+#lightpage {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  display: grid;
+  place-content: center;
+  animation: smoothin 1s;
+  overflow: hidden;
+}
+
+@keyframes smoothin {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes smoothout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#lightpage div {
+  width: 100%;
+  height: 200%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 0.1rem solid white;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+#lightpage input {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  text-align: center;
+  width: 20rem;
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+}
+
+#lightpage input::placeholder {
+  font-size: 80%;
+}
+
+#lightpage button {
+  padding: 0.4rem;
+  color: white;
+  background: transparent;
+  border: 0.1rem solid white;
+  border-radius: 0.4rem;
+  transition: all 0.5s;
+  outline: none;
+}
+
+#lightpage button:hover,
+#lightpage button:focus {
+  background-color: black;
+  transform: scale(1.1);
+}
+
+.userBlock {
+  width: 100%;
+  height: 90%;
+}
+
+.searchBlock {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding-right: 5%;
+}
+
+#searchEntity {
+  width: fit-content;
+  height: fit-content;
+  background-color: white;
+  display: flex;
+}
+
+#searchEntity input {
+  border: none;
+  outline: none;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+#searchEntity input::placeholder {
+  font-size: 80%;
+}
+
+#searchIcon {
+  color: yellowgreen;
+  transition: all 0.3s;
+}
+
+#searchIcon:hover {
+  transform: scale(1.1);
+}
+
+.adderBlock {
+  width: 100%;
+  height: 20vh;
+  display: grid;
+  place-content: center;
+}
+
+.adderBlock input {
+  outline: none;
+  text-align: center;
+}
+
+.adderBlock input::placeholder {
+  letter-spacing: 0.2rem;
+}
+
+#ta {
+  outline: none;
+  width: 20rem;
+  min-width: 18rem;
+  max-width: 30rem;
+  height: 3rem;
+  max-height: 8rem;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+#ta::placeholder {
+  letter-spacing: 0.2rem;
+}
+
+#addIcon {
+  font-size: 2rem;
+  border-radius: 1rem;
+  color: yellowgreen;
+  border: 0.1rem solid white;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+#addIcon:hover {
+  color: black;
+  background-color: yellowgreen;
+  border: 0.1rem solid black;
+}
+
+.dataBlock {
+  width: 100%;
+  height: 65vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.item {
+  position: relative;
+  margin: 1rem 0;
+  width: 30%;
+  height: 20vh;
+  padding: 0 0.5rem;
+  border: 0.1rem solid white;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(45deg, greenyellow, yellowgreen);
+  transition: all 0.3s;
+  overflow: hidden;
+  animation: smoothin 1s;
+}
+
+.item div:first-child {
+  font-size: 120%;
+  text-align: center;
+  border-bottom: 0.1rem solid white;
+}
+
+.item pre {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  text-align: center;
+}
+
+.item:hover {
+  transform: scale(0.98);
+}
+
+.lightItem {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  animation: smoothin 0.3s;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mat-icons-option {
+  padding: 0.5rem;
+  color: yellowgreen;
+  background-color: white;
+  border-radius: 1rem;
+  box-sizing: content-box;
+  transition: all 0.5s !important;
+}
+
+#viewIconOption:hover {
+  color: white;
+  background-color: green;
+  transform: scale(1.2) rotate(180deg);
+}
+
+#editIconOption:hover {
+  color: white;
+  background-color: blue;
+  transform: scale(1.2);
+}
+
+#deleteIconOption:hover {
+  color: white;
+  background-color: red;
+  transform: scale(1.2);
+}
+
+#lightPageVE {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  animation: smoothin 0.5s;
+  overflow: hidden;
+  display: grid;
+  place-content: center;
+}
+
+#container {
+  width: 50vw;
+  height: 50vh;
+  background-color: greenyellow;
+  text-align: center;
+  padding: 0.2rem;
+  border-radius: 2rem;
+  overflow: auto;
+}
+
+#container div:first-child {
+  font-size: 2rem;
+  font-weight: 600;
+  border-bottom: 0.1rem solid white;
+}
+
+#container pre {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 1.2rem;
+}
+
+#exitIcon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 5rem;
+  transition: all 0.3s;
+}
+
+#exitIcon:hover {
+  color: red;
+  transform: rotate(90deg);
+}
+
+@media screen and (max-width: 1150px) {
+  #dropDown {
+    width: 10%;
+  }
+
+  .table {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 14px;
+  }
+
+  .item {
+    width: 40%;
+  }
+
+  #ta {
+    max-width: 25rem;
+  }
+
+  #container {
+    height: 30vh;
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 13px;
+  }
+
+  .table {
+    width: 80%;
+  }
+
+  #ta {
+    max-height: 6rem;
+    max-width: 25rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 12px;
+  }
+
+  #ta {
+    max-height: 5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .table div div:nth-child(4) {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .loginBox {
+    width: 75%;
+  }
+
+  .table {
+    width: 90%;
+  }
+
+  #dropDown {
+    width: 15%;
+  }
+  .item {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 8px;
+  }
+}
